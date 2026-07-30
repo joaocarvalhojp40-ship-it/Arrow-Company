@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arrow Company — Revolucionando a Web</title>
 
-  <!-- Favicon SVG em formato de flecha / Arrow -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z'/></svg>">
+  <!-- Favicon SVG em formato de flecha / Arrow em Laranja -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff6600'><path d='M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z'/></svg>">
+
+  <!-- Fontes Públicas via Google Fonts (Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- AOS CSS (Para efeitos de Fade-Up) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
-  <!-- Font Awesome para Ícones do Footer -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Awesome CDN Público para Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
@@ -21,8 +26,9 @@
       --bg-footer: #161616;
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
-      --accent: #6366f1;
-      --accent-hover: #4f46e5;
+      --accent: #ff6600;
+      --accent-hover: #e05500;
+      --accent-glow: rgba(255, 102, 0, 0.2);
       --border-color: #27272a;
     }
 
@@ -30,7 +36,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     }
 
     body {
@@ -57,10 +63,11 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-weight: 700;
-      font-size: 1.3rem;
+      gap: 0.6rem;
+      font-weight: 800;
+      font-size: 1.4rem;
       color: #fff;
+      letter-spacing: -0.5px;
     }
 
     .brand i {
@@ -70,7 +77,8 @@
     nav a {
       color: var(--text-muted);
       text-decoration: none;
-      margin-left: 1.5rem;
+      margin-left: 1.8rem;
+      font-weight: 500;
       transition: color 0.3s;
     }
 
@@ -92,38 +100,44 @@
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
+      font-weight: 800;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -1px;
     }
 
     .hero p {
       font-size: 1.2rem;
       color: var(--text-muted);
-      max-width: 700px;
+      max-width: 720px;
       margin: 0 auto 2rem;
     }
 
     .ceo-badge {
-      display: inline-block;
-      padding: 0.4rem 1rem;
-      background-color: rgba(99, 102, 241, 0.1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.2rem;
+      background-color: var(--accent-glow);
       border: 1px solid var(--accent);
       border-radius: 20px;
       font-size: 0.9rem;
+      font-weight: 600;
       color: var(--accent);
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     /* Section Component */
     .section-title {
       font-size: 2rem;
+      font-weight: 700;
       margin-bottom: 1.5rem;
       color: #fff;
-      border-left: 4rem solid var(--accent);
-      padding-left: 0.75rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 0.8rem;
     }
 
     .card {
@@ -142,8 +156,8 @@
 
     /* MyProfile Highlight Section */
     .myprofile-card {
-      background: linear-gradient(145deg, #1e1e1e 0%, #171a2e 100%);
-      border: 1px solid rgba(99, 102, 241, 0.3);
+      background: linear-gradient(145deg, #1e1e1e 0%, #261810 100%);
+      border: 1px solid rgba(255, 102, 0, 0.3);
       position: relative;
       overflow: hidden;
     }
@@ -151,47 +165,77 @@
     .tag {
       background-color: var(--accent);
       color: #fff;
-      padding: 0.2rem 0.6rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: bold;
+      font-size: 0.75rem;
+      font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.8rem;
       background-color: var(--accent);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: 600;
-      margin-top: 1rem;
-      transition: background-color 0.3s;
+      margin-top: 1.2rem;
+      transition: background-color 0.3s, transform 0.2s;
     }
 
     .btn:hover {
       background-color: var(--accent-hover);
+      transform: translateY(-2px);
     }
 
-    /* Embed Container */
-    .embed-wrapper {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: 8px;
-      margin-top: 1.5rem;
+    /* Embed Container sem YouTube */
+    .embed-card {
+      background-color: var(--bg-card);
       border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
     }
 
-    .embed-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .embed-box {
+      background: #18181b;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 2rem;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .embed-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: #222;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .embed-item i {
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    .embed-item div h4 {
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .embed-item div p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin: 0;
     }
 
     /* Footer Extenso */
@@ -207,7 +251,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     .theme-toggle {
@@ -237,15 +281,16 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
-      margin-bottom: 4rem;
+      margin-bottom: 3.5rem;
     }
 
     .footer-col h4 {
-      color: #71717a;
+      color: #a1a1aa;
       font-size: 0.8rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .footer-col ul {
@@ -253,7 +298,7 @@
     }
 
     .footer-col ul li {
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.7rem;
     }
 
     .footer-col ul li a {
@@ -263,18 +308,19 @@
     }
 
     .footer-col ul li a:hover {
-      color: #fff;
+      color: var(--accent);
     }
 
-    /* Watermark / Large Logo Text */
+    /* Watermark / Large Logo Text em Laranja Suave */
     .footer-watermark {
-      font-size: 6rem;
+      font-size: 6.5rem;
       font-weight: 900;
-      color: rgba(255, 255, 255, 0.03);
+      color: rgba(255, 102, 0, 0.04);
       text-align: center;
       user-select: none;
       margin: 2rem 0;
       line-height: 1;
+      letter-spacing: -2px;
     }
 
     .footer-bottom {
@@ -284,25 +330,42 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1.5rem;
+    }
+
+    .footer-contact {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    .footer-contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
     }
 
     .social-links {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
     .social-btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       background-color: #222;
       border: 1px solid var(--border-color);
-      border-radius: 6px;
+      border-radius: 8px;
       color: var(--text-muted);
       text-decoration: none;
+      font-size: 1.1rem;
       transition: all 0.3s;
     }
 
@@ -310,9 +373,9 @@
       color: #fff;
       border-color: var(--accent);
       background-color: var(--accent);
+      transform: translateY(-2px);
     }
 
-    /* Responsividade */
     @media (max-width: 768px) {
       .footer-top, .footer-bottom {
         flex-direction: column;
@@ -335,7 +398,7 @@
     <nav>
       <a href="#proposito">Propósito</a>
       <a href="#myprofile">MyProfile</a>
-      <a href="#midia">Demonstração</a>
+      <a href="#ecossistema">Ecossistema</a>
     </nav>
   </header>
 
@@ -343,49 +406,76 @@
     
     <!-- Hero Header -->
     <section class="hero" data-aos="fade-up">
-      <div class="ceo-badge">Liderado pelo CEO eljoaogg / João Paulo</div>
-      <h1>Modelando o Futuro da Experiência Digital</h1>
-      <p>Desenvolvemos ecossistemas web de alta performance focados em autonomia, personalização e inovação contínua.</p>
+      <div class="ceo-badge">
+        <i class="fa-solid fa-crown"></i>
+        <span>CEO: eljoaogg / João Paulo</span>
+      </div>
+      <h1>Revolucionando a Indústria Web</h1>
+      <p>Desenvolvemos ecossistemas web de alta performance focados em autonomia, personalização e inovação tecnológica contínua.</p>
     </section>
 
     <!-- Seção Propósito -->
     <section id="proposito" class="card" data-aos="fade-up" data-aos-delay="100">
       <h2 class="section-title">Nosso Propósito Institucional</h2>
       <p>
-        A <strong>Arrow Company</strong> nasceu com a missão fundamental de redefinir os parâmetros da indústria web contemporânea. Acreditamos que a rede mundial de computadores necessita superar os modelos engessados e padronizados do passado para dar lugar a arquiteturas verdadeiramente dinâmicas e centradas no usuário.
+        A <strong>Arrow Company</strong> tem o compromisso de liderar uma nova era no desenvolvimento digital. Nosso objetivo central é transformar a experiência na web por meio da criação de soluções pioneiras, funcionais e totalmente adaptáveis às necessidades contemporâneas.
       </p>
       <p>
-        Pautados pela busca incansável do inédito, desenvolvemos soluções tecnológicas que combinam design sofisticado, engenharia de software de ponta e máxima eficiência operacional. Nosso compromisso é capacitar indivíduos e corporações através de ferramentas interativas que transformam a presença digital em uma experiência única e memorável.
+        Sob a liderança do CEO <strong>eljoaogg / João Paulo</strong>, a Arrow busca romper com padrões tradicionais, trazendo inovações que combinam alta performance, design intuitivo e total liberdade de personalização para criadores e empresas.
       </p>
     </section>
 
     <!-- Seção Exclusiva MyProfile -->
     <section id="myprofile" class="card myprofile-card" data-aos="fade-up" data-aos-delay="200">
       <span class="tag">Projeto em Destaque</span>
-      <h2 class="section-title" style="margin-top: 0.5rem;">MyProfile</h2>
+      <h2 class="section-title" style="margin-top: 0.8rem;">MyProfile</h2>
       <p>
-        O <strong>MyProfile</strong> representa o ápice da visão criativa da Arrow Company. Trata-se de uma plataforma inovadora criada para que usuários e marcas possam construir e gerenciar perfis altamente personalizados na web sem complicações técnicas.
+        O <strong>MyProfile</strong> é um dos principais projetos da Arrow Company, desenvolvido para permitir a criação de perfis highly personalizados na web.
       </p>
       <p>
-        Com o MyProfile, você obtém controle total sobre sua identidade digital. A ferramenta oferece integração fluida com diversas plataformas, layouts adaptáveis e recursos avançados de customização que garantem uma apresentação web profissional e totalmente alinhada à sua essência.
+        Com uma interface moderna e flexível, o MyProfile permite que usuários centralizem suas informações, identidades digitais e presenças online em uma única página elegante, eficiente e customizável.
       </p>
-      <a href="https://myprofile.arrow.com" class="btn" target="_blank" rel="noopener">Criar Meu Perfil</a>
+      <a href="#myprofile" class="btn">
+        <span>Criar Perfil Personalizado</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
     </section>
 
-    <!-- Seção com Embed e Mídia -->
-    <section id="midia" class="card" data-aos="fade-up" data-aos-delay="300">
-      <h2 class="section-title">Demonstração e Mídia Integrada</h2>
-      <p>Acompanhe a apresentação conceitual de nossas tecnologias através do ecossistema multimídia abaixo:</p>
+    <!-- Seção de Ecossistema e Recursos -->
+    <section id="ecossistema" class="embed-card" data-aos="fade-up" data-aos-delay="300">
+      <h2 class="section-title">Recursos do Ecossistema Arrow</h2>
+      <p>Conheça os pilares de inovação integrados às nossas plataformas web:</p>
       
-      <!-- Exemplo de Embed Responsivo (Vídeo demonstrativo / Placeholder) -->
-      <div class="embed-wrapper">
-        <iframe src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="Apresentação Arrow Company" allowfullscreen></iframe>
+      <div class="embed-box">
+        <div class="embed-item">
+          <i class="fa-solid fa-sliders"></i>
+          <div>
+            <h4>Personalização em Tempo Real</h4>
+            <p>Ajuste dinâmico de temas, fontes públicas e elementos visuais sem código.</p>
+          </div>
+        </div>
+
+        <div class="embed-item">
+          <i class="fa-solid fa-bolt"></i>
+          <div>
+            <h4>Infraestrutura de Alta Performance</h4>
+            <p>Carregamento ultrarrápido com otimização contínua de recursos digitais.</p>
+          </div>
+        </div>
+
+        <div class="embed-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <h4>Privacidade e Segurança</h4>
+            <p>Arquitetura protegida focada na gestão segura de perfis e dados de usuários.</p>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer Extenso no Estilo do Anexo -->
+  <!-- Footer Extenso -->
   <footer data-aos="fade-up">
     
     <div class="footer-top">
@@ -397,7 +487,7 @@
         <p>© 2026 Arrow. Todos os direitos reservados.</p>
       </div>
       
-      <!-- Controls / Alternador de Tema como no anexo -->
+      <!-- Alternador de Tema -->
       <div class="theme-toggle">
         <button class="theme-btn" title="Sistema"><i class="fa-solid fa-desktop"></i></button>
         <button class="theme-btn" title="Claro"><i class="fa-solid fa-sun"></i></button>
@@ -410,8 +500,7 @@
         <h4>PRODUTO</h4>
         <ul>
           <li><a href="#myprofile">MyProfile</a></li>
-          <li><a href="#">Bot do Discord</a></li>
-          <li><a href="#">Widget de site</a></li>
+          <li><a href="#">Perfis Personalizados</a></li>
           <li><a href="#">Planos</a></li>
           <li><a href="#">Documentação</a></li>
         </ul>
@@ -422,7 +511,7 @@
         <ul>
           <li><a href="#proposito">Sobre a Arrow</a></li>
           <li><a href="#">Blog</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="mailto:arrowcompany.contato@gmail.com">Contato</a></li>
           <li><a href="#">Status</a></li>
           <li><a href="#">Design System</a></li>
         </ul>
@@ -433,6 +522,7 @@
         <ul>
           <li><a href="#">Termos de uso</a></li>
           <li><a href="#">Privacidade</a></li>
+          <li><a href="#">LGPD</a></li>
         </ul>
       </div>
     </div>
@@ -443,12 +533,25 @@
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 Arrow · um produto <strong>Arrow Company</strong> (CEO: eljoaogg / João Paulo) · arrowcompany.contato@gmail.com</p>
+      <div>
+        <p>© 2026 Arrow · CEO: <strong>eljoaogg / João Paulo</strong> · Arrow Company</p>
+        <div class="footer-contact" style="margin-top: 0.4rem;">
+          <i class="fa-regular fa-envelope"></i>
+          <a href="mailto:arrowcompany.contato@gmail.com">arrowcompany.contato@gmail.com</a>
+        </div>
+      </div>
       
+      <!-- Redes Sociais com Links Oficiais Solicitados -->
       <div class="social-links">
-        <a href="https://discord.gg/C3ddsA6NQu" class="social-btn" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
-        <a href="https://www.instagram.com/arrowcompany.contato" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://x.com/arrowcompany" class="social-btn" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://discord.gg/C3ddsA6NQu" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Discord">
+          <i class="fa-brands fa-discord"></i>
+        </a>
+        <a href="https://www.instagram.com/arrowcompany.contato" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://x.com/arrowcompany" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X / Twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
       </div>
     </div>
 
@@ -457,7 +560,6 @@
   <!-- AOS JS (Animações de Scroll) -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Inicialização da biblioteca de animação Fade-Up
     AOS.init({
       duration: 800,
       once: true,
